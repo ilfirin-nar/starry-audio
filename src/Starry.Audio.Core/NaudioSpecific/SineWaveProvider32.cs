@@ -1,6 +1,7 @@
 ﻿using System;
+using NAudio.Wave;
 
-namespace Starry.Synth.Console
+namespace Starry.Audio.Core.NaudioSpecific
 {
     public class SineWaveProvider32 : WaveProvider32
     {
@@ -14,11 +15,10 @@ namespace Starry.Synth.Console
 
         public float Frequency { get; set; }
 
-        public float Amplitude { get; set; }
+        private float Amplitude { get; set; }
 
-        protected override int Read(float[] buffer, int offset, int sampleCount)
+        public override int Read(float[] buffer, int offset, int sampleCount)
         {
-            System.Console.Write(Frequency + " ");
             var sampleRate = WaveFormat.SampleRate;
             for (var n = 0; n < sampleCount; n++)
             {
