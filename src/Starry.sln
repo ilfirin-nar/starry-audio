@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Synth", "Starry.Synth\Starry.Synth.csproj", "{4177DF8B-4885-493E-88CE-068734B6988F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Synth.Console", "Starry.Synth.Console\Starry.Synth.Console.csproj", "{4177DF8B-4885-493E-88CE-068734B6988F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Synth", "Starry.Synth\Starry.Synth.csproj", "{53A010BF-9741-4269-9276-AD224B95C0EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Io", "Starry.Audio.Io\Starry.Audio.Io.csproj", "{F925822D-761B-4201-8BF8-80F88A230872}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Infrastructure", "Starry.Infrastructure\Starry.Infrastructure.csproj", "{4171B074-ED5E-4F15-B1A6-2A004C71F303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Math", "Starry.Math\Starry.Math.csproj", "{FD6194C1-0230-459C-A50D-27CADC072875}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{4177DF8B-4885-493E-88CE-068734B6988F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4177DF8B-4885-493E-88CE-068734B6988F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4177DF8B-4885-493E-88CE-068734B6988F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53A010BF-9741-4269-9276-AD224B95C0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53A010BF-9741-4269-9276-AD224B95C0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53A010BF-9741-4269-9276-AD224B95C0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53A010BF-9741-4269-9276-AD224B95C0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F925822D-761B-4201-8BF8-80F88A230872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F925822D-761B-4201-8BF8-80F88A230872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F925822D-761B-4201-8BF8-80F88A230872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F925822D-761B-4201-8BF8-80F88A230872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4171B074-ED5E-4F15-B1A6-2A004C71F303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4171B074-ED5E-4F15-B1A6-2A004C71F303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4171B074-ED5E-4F15-B1A6-2A004C71F303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4171B074-ED5E-4F15-B1A6-2A004C71F303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6194C1-0230-459C-A50D-27CADC072875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6194C1-0230-459C-A50D-27CADC072875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6194C1-0230-459C-A50D-27CADC072875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6194C1-0230-459C-A50D-27CADC072875}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

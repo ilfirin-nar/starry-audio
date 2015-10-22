@@ -1,6 +1,6 @@
 ﻿using NAudio.Wave;
 
-namespace StarrySynth
+namespace Starry.Synth.Console
 {
     public abstract class WaveProvider32 : IWaveProvider
     {

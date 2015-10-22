@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StarrySynth
+namespace Starry.Synth.Console
 {
     public class SineWaveProvider32 : WaveProvider32
     {
@@ -18,7 +18,7 @@ namespace StarrySynth
 
         protected override int Read(float[] buffer, int offset, int sampleCount)
         {
-            Console.Write(Frequency + " ");
+            System.Console.Write(Frequency + " ");
             var sampleRate = WaveFormat.SampleRate;
             for (var n = 0; n < sampleCount; n++)
             {

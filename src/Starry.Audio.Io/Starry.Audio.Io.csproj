@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53A010BF-9741-4269-9276-AD224B95C0EF}</ProjectGuid>
+    <ProjectGuid>{F925822D-761B-4201-8BF8-80F88A230872}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Starry.Synth</RootNamespace>
-    <AssemblyName>Starry.Synth</AssemblyName>
+    <RootNamespace>Starry.Audio.Io</RootNamespace>
+    <AssemblyName>Starry.Audio.Io</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -1,7 +1,7 @@
 ﻿using System;
 using NAudio.Wave;
 
-namespace StarrySynth
+namespace Starry.Synth.Console
 {
     static class Program
     {
@@ -21,7 +21,7 @@ namespace StarrySynth
             {
                 while (true)
                 {
-                    var keyInfo = Console.ReadKey();
+                    var keyInfo = System.Console.ReadKey();
                     switch (keyInfo.Key) {
                         case ConsoleKey.UpArrow:
                             sineWaveProvider.Frequency += 100;
@@ -34,8 +34,8 @@ namespace StarrySynth
             }
             catch (Exception)
             {
-                Console.WriteLine("Bad frequency!");
-                Console.ReadKey();
+                System.Console.WriteLine("Bad frequency!");
+                System.Console.ReadKey();
             }
             finally
             {
