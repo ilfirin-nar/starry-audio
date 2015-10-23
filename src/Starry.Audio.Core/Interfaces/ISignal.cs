@@ -1,4 +1,4 @@
-﻿namespace Starry.Audio.Core.Intefaces
+﻿namespace Starry.Audio.Core.Interfaces
 {
     public interface ISignal
     {

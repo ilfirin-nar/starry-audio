@@ -44,16 +44,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Configurations\AudioConfiguration.cs" />
+    <Compile Include="Domain\Signal.cs" />
+    <Compile Include="Enums\Configuration\BitDepthMode.cs" />
     <Compile Include="Enums\NoiseType.cs" />
+    <Compile Include="Enums\Configuration\SampleRateMode.cs" />
     <Compile Include="Enums\SignalType.cs" />
-    <Compile Include="Intefaces\ISignal.cs" />
-    <Compile Include="NaudioSpecific\SineWaveProvider32.cs" />
+    <Compile Include="Interfaces\IAudioConfiguration.cs" />
+    <Compile Include="Interfaces\IBus.cs" />
+    <Compile Include="Interfaces\ICurrentAudioConfiguration.cs" />
+    <Compile Include="Interfaces\ISignal.cs" />
+    <Compile Include="Services\Configuration\AudioConfigurator.cs" />
+    <Compile Include="Services\Configuration\IAudioConfigurator.cs" />
+    <Compile Include="Services\NaudioSpecific\SineWaveProvider32.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Intefaces\ISignalGenerator.cs" />
-    <Compile Include="SignalGenerators\SignalGenerator.cs" />
+    <Compile Include="Services\SignalGenerators\ISignalGenerator.cs" />
+    <Compile Include="Services\SignalGenerators\SignalGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Starry.Infrastructure\Starry.Infrastructure.csproj">
+      <Project>{4171B074-ED5E-4F15-B1A6-2A004C71F303}</Project>
+      <Name>Starry.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

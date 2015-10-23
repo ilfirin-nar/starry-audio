@@ -47,6 +47,7 @@
     <Compile Include="DependencyInjection\LifettimeFactory.cs" />
     <Compile Include="DependencyInjection\ServiceRegistrationFilter.cs" />
     <Compile Include="DependencyInjection\ServiceRegistryExtensions.cs" />
+    <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

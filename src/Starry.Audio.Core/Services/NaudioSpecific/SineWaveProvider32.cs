@@ -1,7 +1,7 @@
 ﻿using System;
 using NAudio.Wave;
 
-namespace Starry.Audio.Core.NaudioSpecific
+namespace Starry.Audio.Core.Services.NaudioSpecific
 {
     public class SineWaveProvider32 : WaveProvider32
     {

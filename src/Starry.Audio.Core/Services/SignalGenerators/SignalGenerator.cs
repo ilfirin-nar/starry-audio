@@ -1,7 +1,7 @@
 ﻿using Starry.Audio.Core.Enums;
-using Starry.Audio.Core.Intefaces;
+using Starry.Audio.Core.Interfaces;
 
-namespace Starry.Audio.Core.SignalGenerators
+namespace Starry.Audio.Core.Services.SignalGenerators
 {
     public class SignalGenerator : ISignalGenerator
     {
