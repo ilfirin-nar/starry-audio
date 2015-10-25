@@ -1,4 +1,4 @@
 ﻿namespace Starry.Infrastructure.Interfaces
 {
-    public interface IStrategy {}
+    public interface IStrategy : IService {}
 }
