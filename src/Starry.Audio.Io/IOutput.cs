@@ -1,4 +1,4 @@
-﻿using Starry.Audio.Core.Intefaces;
+﻿using Starry.Audio.Core.ModuleInterface.Interfaces;
 
 namespace Starry.Audio.Io
 {

@@ -1,12 +1,9 @@
-﻿using Starry.Audio.Core.Enums;
-using Starry.Audio.Core.Interfaces;
+﻿using Starry.Audio.Core.ModuleInterface.Interfaces;
 
 namespace Starry.Audio.Core.Services.SignalGenerators
 {
     public interface ISignalGenerator
     {
-        SignalType SignalType { get; set; }
-
-        ISignal Generate();
+        ISignal Generate(ISignalType signalType);
     }
 }

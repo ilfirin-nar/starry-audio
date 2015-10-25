@@ -59,6 +59,10 @@
       <Project>{a70b1abb-a5d1-4f0b-9d99-9e3060071230}</Project>
       <Name>Starry.Audio.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Starry.Common\Starry.Common.csproj">
+      <Project>{6f6d537e-9841-492e-a0f0-8649196b3a20}</Project>
+      <Name>Starry.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

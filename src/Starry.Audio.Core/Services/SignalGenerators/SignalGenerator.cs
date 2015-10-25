@@ -1,33 +1,22 @@
-﻿using Starry.Audio.Core.Enums;
-using Starry.Audio.Core.Interfaces;
+﻿using Starry.Audio.Core.Domain.Signals;
+using Starry.Audio.Core.ModuleInterface.Interfaces;
+using Starry.Audio.Core.Services.SignalGenerators.SignalGenerationStrategiesProviders;
 
 namespace Starry.Audio.Core.Services.SignalGenerators
 {
     public class SignalGenerator : ISignalGenerator
     {
-        private SignalType signalType;
+        private readonly ISignalGenerationStrategyProvider strategyProvider;
 
-        public SignalGenerator()
+        public SignalGenerator(ISignalGenerationStrategyProvider strategyProvider)
         {
-            signalType = SignalType.Sin;
+            this.strategyProvider = strategyProvider;
         }
 
-        public SignalType SignalType
+        public ISignal Generate(ISignalType signalType)
         {
-            get
-            {
-                return signalType;
-            }
-
-            set
-            {
-                signalType = value;
-            }
-        }
-
-        public ISignal Generate()
-        {
-            throw new System.NotImplementedException();
+            var strategy = strategyProvider.Provide(signalType);
+            return new Signal((buffer, offset, sampleCount) => strategy.FillBuffer(buffer, offset, sampleCount), signalType);
         }
     }
 }

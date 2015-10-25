@@ -1,6 +1,6 @@
 ﻿using Starry.Audio.Core.Enums.Configuration;
 
-namespace Starry.Audio.Core.Interfaces
+namespace Starry.Audio.Core.ModuleInterface.Interfaces
 {
     public interface IAudioConfiguration
     {

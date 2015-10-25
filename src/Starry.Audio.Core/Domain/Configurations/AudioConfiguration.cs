@@ -1,5 +1,5 @@
 ﻿using Starry.Audio.Core.Enums.Configuration;
-using Starry.Audio.Core.Interfaces;
+using Starry.Audio.Core.ModuleInterface.Interfaces;
 
 namespace Starry.Audio.Core.Domain.Configurations
 {

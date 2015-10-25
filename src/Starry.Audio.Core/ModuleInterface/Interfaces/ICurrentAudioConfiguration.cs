@@ -1,4 +1,4 @@
-﻿namespace Starry.Audio.Core.Interfaces
+﻿namespace Starry.Audio.Core.ModuleInterface.Interfaces
 {
     public interface ICurrentAudioConfiguration : IAudioConfiguration {}
 }
