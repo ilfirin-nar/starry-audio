@@ -1,5 +1,4 @@
-﻿using Starry.Audio.Core.ModuleInterface.Delegates;
-using Starry.Audio.Core.ModuleInterface.Interfaces;
+﻿using Starry.Audio.Core.Domain.Signals.SignalTypes;
 
 namespace Starry.Audio.Core.Domain.Signals
 {

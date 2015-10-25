@@ -1,6 +1,6 @@
 using System;
 using NAudio.Wave;
-using Starry.Audio.Core.Domain.SignalTypes;
+using Starry.Audio.Core.Domain.Signals.SignalTypes;
 using Starry.Audio.Core.Services.NaudioSpecific.WaveProviders;
 
 namespace Starry.Audio.Core.Services.SignalGenerators.SignalGenerationStrategies

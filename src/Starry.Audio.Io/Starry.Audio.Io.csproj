@@ -44,13 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IOutput.cs" />
-    <Compile Include="IOutputConfiguration.cs" />
-    <Compile Include="Outputs\IWindowsOutput.cs" />
-    <Compile Include="Outputs\WindowsOutput.cs" />
+    <Compile Include="Domain\Outputs\IAudioOutput.cs" />
+    <Compile Include="Domain\Outputs\IWindowsAudioOutput.cs" />
+    <Compile Include="Domain\Outputs\WindowsAudioOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Domain\Inputs\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
@@ -62,6 +63,10 @@
     <ProjectReference Include="..\Starry.Common\Starry.Common.csproj">
       <Project>{6f6d537e-9841-492e-a0f0-8649196b3a20}</Project>
       <Name>Starry.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Starry.Infrastructure\Starry.Infrastructure.csproj">
+      <Project>{4171B074-ED5E-4F15-B1A6-2A004C71F303}</Project>
+      <Name>Starry.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

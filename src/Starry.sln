@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Core", "Starry
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Common", "Starry.Common\Starry.Common.csproj", "{6F6D537E-9841-492E-A0F0-8649196B3A20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Engine", "Starry.Audio.Pipeline\Starry.Audio.Engine.csproj", "{E73E7D58-5741-41EF-84A7-48D937BD2F0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{6F6D537E-9841-492E-A0F0-8649196B3A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F6D537E-9841-492E-A0F0-8649196B3A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F6D537E-9841-492E-A0F0-8649196B3A20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿using Starry.Audio.Core.ModuleInterface.Interfaces;
+﻿using Starry.Audio.Core.Domain.Signals.SignalTypes;
 using Starry.Infrastructure.Interfaces;
 
 namespace Starry.Audio.Core.Services.SignalGenerators.SignalGenerationStrategies

@@ -1,4 +1,4 @@
-﻿using Starry.Audio.Core.ModuleInterface.Interfaces;
+﻿using Starry.Audio.Core.Domain.Configurations;
 
 namespace Starry.Audio.Core.Services.Configuration
 {
