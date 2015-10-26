@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Core", "Starry
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Common", "Starry.Common\Starry.Common.csproj", "{6F6D537E-9841-492E-A0F0-8649196B3A20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Engine", "Starry.Audio.Pipeline\Starry.Audio.Engine.csproj", "{E73E7D58-5741-41EF-84A7-48D937BD2F0F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Core.Tests", "Starry.Audio.Core.Tests\Starry.Audio.Core.Tests.csproj", "{BE29FEAC-313A-42B3-849B-16BC108FCC70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Engine.Tests", "Starry.Audio.Engine.Tests\Starry.Audio.Engine.Tests.csproj", "{C6EB8220-9994-4AA1-B4CC-D7DBC4C5D6AF}"
@@ -26,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Daw.Engine", "Starry.Daw.Engine\Starry.Daw.Engine.csproj", "{6E1498E5-A703-4A33-A0A5-1D06C32EDD3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Daw.Engine.Tests", "Starry.Daw.Engine.Tests\Starry.Daw.Engine.Tests.csproj", "{06AD1E48-EE85-44F2-9629-C1CB5938DDA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Engine", "Starry.Audio.Engine\Starry.Audio.Engine.csproj", "{E73E7D58-5741-41EF-84A7-48D937BD2F0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,10 +61,6 @@ Global
 		{6F6D537E-9841-492E-A0F0-8649196B3A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F6D537E-9841-492E-A0F0-8649196B3A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F6D537E-9841-492E-A0F0-8649196B3A20}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE29FEAC-313A-42B3-849B-16BC108FCC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE29FEAC-313A-42B3-849B-16BC108FCC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE29FEAC-313A-42B3-849B-16BC108FCC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +77,10 @@ Global
 		{06AD1E48-EE85-44F2-9629-C1CB5938DDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06AD1E48-EE85-44F2-9629-C1CB5938DDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06AD1E48-EE85-44F2-9629-C1CB5938DDA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
