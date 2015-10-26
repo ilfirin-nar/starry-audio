@@ -1,8 +1,8 @@
 using Starry.Audio.Core.Domain.Signals.SignalTypes;
 
-namespace Starry.Audio.Core.Services.SignalGenerators.SignalGenerationStrategies
+namespace Starry.Audio.Core.Services.SignalGenerators.Strategies
 {
-    internal class SawGenerationStrategy : ISignalGenerationStrategy<SawSignalType>
+    internal class SquareGenerationStrategy : ISignalGenerationStrategy<SquareSignalType>
     {
         public int FillBuffer(byte[] buffer, int offset, int sampleCount)
         {

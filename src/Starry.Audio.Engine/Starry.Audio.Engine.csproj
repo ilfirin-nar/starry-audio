@@ -40,6 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Pipeline\Building\IPipelineDesign.cs" />
+    <Compile Include="Domain\Pipeline\Building\IPipelineElementsBinding.cs" />
+    <Compile Include="Domain\Pipeline\Building\PipelineDesign.cs" />
+    <Compile Include="Domain\Pipeline\Building\PipelineElementsBinding.cs" />
+    <Compile Include="Services\Pipeline\Building\IPipelineDesigner.cs" />
+    <Compile Include="Services\Pipeline\Building\IPipelineElementsBinder.cs" />
+    <Compile Include="Services\Pipeline\Building\PipelineDesigner.cs" />
     <Compile Include="Domain\Pipeline\Elements\SignalGeneratorSource.cs" />
     <Compile Include="Domain\Pipeline\Elements\WindowsOutputSink.cs" />
     <Compile Include="Domain\Pipeline\Elements\IWindowsOutputSink.cs" />
@@ -53,9 +60,20 @@
     <Compile Include="Domain\Pipeline\IPipelineSource.cs" />
     <Compile Include="Domain\Pipeline\Elements\ISignalGeneratorSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Pipeline\IAudioPipelineBuilder.cs" />
+    <Compile Include="Services\Engines\IAudioEngine.cs" />
+    <Compile Include="Services\Pipeline\Building\IPipelineBuilder.cs" />
+    <Compile Include="Services\Pipeline\Building\IPipelineElementsDelinker.cs" />
+    <Compile Include="Services\Pipeline\Building\IPipelineElementsLinker.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Starry.Audio.Core\Starry.Audio.Core.csproj">
+      <Project>{A70B1ABB-A5D1-4F0B-9D99-9E3060071230}</Project>
+      <Name>Starry.Audio.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Starry.Audio.Io\Starry.Audio.Io.csproj">
+      <Project>{F925822D-761B-4201-8BF8-80F88A230872}</Project>
+      <Name>Starry.Audio.Io</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Starry.Infrastructure\Starry.Infrastructure.csproj">
       <Project>{4171B074-ED5E-4F15-B1A6-2A004C71F303}</Project>
       <Name>Starry.Infrastructure</Name>
@@ -63,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\Engines\" />
-    <Folder Include="Services\Engines\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

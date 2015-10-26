@@ -1,4 +1,6 @@
-﻿namespace Starry.Audio.Engine.Domain.Pipeline
+﻿using Starry.Infrastructure.Interfaces;
+
+namespace Starry.Audio.Engine.Domain.Pipeline
 {
     public interface IPipelineElement {}
 

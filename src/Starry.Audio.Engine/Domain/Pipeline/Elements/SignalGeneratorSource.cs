@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Starry.Audio.Core.Services.SignalGenerators;
 
 namespace Starry.Audio.Engine.Domain.Pipeline.Elements
 {

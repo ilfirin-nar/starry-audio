@@ -1,6 +1,6 @@
 using Starry.Audio.Core.Domain.Signals.SignalTypes;
 
-namespace Starry.Audio.Core.Services.SignalGenerators.SignalGenerationStrategies
+namespace Starry.Audio.Core.Services.SignalGenerators.Strategies
 {
     internal class TriangleGenerationStrategy : ISignalGenerationStrategy<TriangleSignalType>
     {

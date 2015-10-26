@@ -1,9 +1,8 @@
-using System;
 using NAudio.Wave;
 using Starry.Audio.Core.Domain.Signals.SignalTypes;
 using Starry.Audio.Core.Services.NaudioSpecific.WaveProviders;
 
-namespace Starry.Audio.Core.Services.SignalGenerators.SignalGenerationStrategies
+namespace Starry.Audio.Core.Services.SignalGenerators.Strategies
 {
     internal class SinGenerationStrategy : ISignalGenerationStrategy<SinSignalType>
     {

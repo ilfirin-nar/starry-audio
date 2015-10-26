@@ -70,13 +70,13 @@
     <Compile Include="Services\SignalGenerators\ISignalGenerator.cs" />
     <Compile Include="Services\SignalGenerators\SignalGenerationStrategiesProviders\ISignalGenerationStrategyProvider.cs" />
     <Compile Include="Services\SignalGenerators\SignalGenerationStrategiesProviders\SignalGenerationStrategyProvider.cs" />
-    <Compile Include="Services\SignalGenerators\SignalGenerationStrategies\ISignalGenerationStrategy.cs" />
-    <Compile Include="Services\SignalGenerators\SignalGenerationStrategies\NoiseGenerationStrategy.cs" />
-    <Compile Include="Services\SignalGenerators\SignalGenerationStrategies\SawGenerationStrategy.cs" />
-    <Compile Include="Services\SignalGenerators\SignalGenerationStrategies\SinGenerationStrategy.cs" />
-    <Compile Include="Services\SignalGenerators\SignalGenerationStrategies\SquareGenerationStrategy.cs" />
-    <Compile Include="Services\SignalGenerators\SignalGenerationStrategies\SweepGenerationStrategy.cs" />
-    <Compile Include="Services\SignalGenerators\SignalGenerationStrategies\TriangleGenerationStrategy.cs" />
+    <Compile Include="Services\SignalGenerators\Strategies\ISignalGenerationStrategy.cs" />
+    <Compile Include="Services\SignalGenerators\Strategies\NoiseGenerationStrategy.cs" />
+    <Compile Include="Services\SignalGenerators\Strategies\SawGenerationStrategy.cs" />
+    <Compile Include="Services\SignalGenerators\Strategies\SinGenerationStrategy.cs" />
+    <Compile Include="Services\SignalGenerators\Strategies\SquareGenerationStrategy.cs" />
+    <Compile Include="Services\SignalGenerators\Strategies\SweepGenerationStrategy.cs" />
+    <Compile Include="Services\SignalGenerators\Strategies\TriangleGenerationStrategy.cs" />
     <Compile Include="Services\SignalGenerators\SignalGenerator.cs" />
   </ItemGroup>
   <ItemGroup>

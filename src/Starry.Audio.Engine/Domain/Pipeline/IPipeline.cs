@@ -1,9 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using Starry.Audio.Engine.Domain.Pipeline.Building;
 
 namespace Starry.Audio.Engine.Domain.Pipeline
 {
     public interface IPipeline
     {
-        IList<IPipelineElement> Elements { get; }
+        IPipelineDesign Design { get; }
+    }
+
+    internal class AudioPipeline : IPipeline
+    {
+        public AudioPipeline(IPipelineDesign design)
+        {
+            Design = design;
+        }
+
+        public IPipelineDesign Design { get; }
     }
 }
