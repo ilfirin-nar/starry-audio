@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Starry.Synth.Console
+﻿namespace Starry.Synth.Console
 {
     static class Program
     {

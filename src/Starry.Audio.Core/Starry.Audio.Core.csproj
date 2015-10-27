@@ -53,7 +53,7 @@
     <Compile Include="Domain\Signals\SignalTypes\SweepSignalType.cs" />
     <Compile Include="Domain\Signals\SignalTypes\TriangleSignalType.cs" />
     <Compile Include="Domain\Signals\SignalTypes\ISignalType.cs" />
-    <Compile Include="Domain\Signals\SignalCallback.cs" />
+    <Compile Include="Domain\Signals\FillBufferMethod.cs" />
     <Compile Include="Enums\Configuration\BitDepthMode.cs" />
     <Compile Include="Enums\Configuration\SampleRateMode.cs" />
     <Compile Include="Domain\Configurations\IAudioConfiguration.cs" />

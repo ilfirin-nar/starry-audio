@@ -4,7 +4,7 @@ namespace Starry.Audio.Core.Domain.Signals
 {
     public interface ISignal
     {
-        SignalCallback FillBufferCallback { get; }
+        FillBufferMethod FillBufferMethod { get; }
 
         ISignalType SignalType { get; }
     }

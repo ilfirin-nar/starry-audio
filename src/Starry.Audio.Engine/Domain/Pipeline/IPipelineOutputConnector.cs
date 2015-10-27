@@ -1,4 +1,9 @@
-﻿namespace Starry.Audio.Engine.Domain.Pipeline
+﻿using System.Collections.Generic;
+
+namespace Starry.Audio.Engine.Domain.Pipeline
 {
-    public interface IPipelineOutputConnector : IPipelineConnector {}
+    public interface IPipelineOutputConnector : IPipelineConnector
+    {
+        ISet<IPipelineInputConnector> Links { get; }
+    }
 }

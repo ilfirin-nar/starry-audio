@@ -7,6 +7,6 @@ namespace Starry.Audio.Engine.Domain.Pipeline
 
     public interface IPipelineSource<TService> : IPipelineElement<TService>, IPipelineSource where TService : IService
     {
-        IList<IPipelineOutputConnector> Outputs { get; }
+        IPipelineOutputConnector Outputs { get; }
     }
 }

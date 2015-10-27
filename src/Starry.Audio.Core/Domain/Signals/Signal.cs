@@ -4,13 +4,13 @@ namespace Starry.Audio.Core.Domain.Signals
 {
     internal class Signal : ISignal
     {
-        public Signal(SignalCallback fillBufferCallback, ISignalType signalType)
+        public Signal(FillBufferMethod fillBufferMethod, ISignalType signalType)
         {
-            FillBufferCallback = fillBufferCallback;
+            FillBufferMethod = fillBufferMethod;
             SignalType = signalType;
         }
 
-        public SignalCallback FillBufferCallback { get; }
+        public FillBufferMethod FillBufferMethod { get; }
 
         public ISignalType SignalType { get; }
     }
