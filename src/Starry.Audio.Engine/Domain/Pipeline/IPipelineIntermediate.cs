@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-using Starry.Infrastructure.Interfaces;
+﻿using Starry.Infrastructure.Interfaces;
 
 namespace Starry.Audio.Engine.Domain.Pipeline
 {
-    public interface IPipelineIntermediate : IPipelineElement {}
+    public interface IPipelineIntermediate : IPipelineUnit, IPipelineConnectableFrom, IPipelineConnectableTo {}
 
-    public interface IPipelineIntermediate<TService> : IPipelineElement<TService>, IPipelineIntermediate where TService : IService
-    {
-        IPipelineInputConnector Input { get; }
-
-        IPipelineOutputConnector Output { get; }
-    }
+    public interface IPipelineIntermediate<TService, out TInputConnector, out TOutputConnector>
+        : IPipelineIntermediate, IPipelineUnit<TService>, IPipelineConnectableFrom<TOutputConnector>, IPipelineConnectableTo<TInputConnector>
+        where TService : IService
+        where TInputConnector : IPipelineInputConnector
+        where TOutputConnector : IPipelineOutputConnector {}
 }

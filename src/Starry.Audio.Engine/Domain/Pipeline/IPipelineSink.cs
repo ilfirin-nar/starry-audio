@@ -2,10 +2,9 @@
 
 namespace Starry.Audio.Engine.Domain.Pipeline
 {
-    public interface IPipelineSink : IPipelineElement {}
+    public interface IPipelineSink : IPipelineUnit, IPipelineConnectableTo {}
 
-    public interface IPipelineSink<TService> : IPipelineElement<TService>, IPipelineSink where TService : IService
-    {
-        IPipelineInputConnector Inputs { get; }
-    }
+    public interface IPipelineSink<TService, out TInputConnector> : IPipelineSink, IPipelineUnit<TService>, IPipelineConnectableTo<TInputConnector>
+        where TService : IService
+        where TInputConnector : IPipelineInputConnector {} 
 }

@@ -40,17 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Pipeline\Building\IPipelineDesign.cs" />
-    <Compile Include="Domain\Pipeline\Building\IPipelineElementsBinding.cs" />
-    <Compile Include="Domain\Pipeline\Building\PipelineDesign.cs" />
-    <Compile Include="Domain\Pipeline\Building\PipelineElementsBinding.cs" />
-    <Compile Include="Services\Pipeline\Building\IPipelineDesigner.cs" />
-    <Compile Include="Services\Pipeline\Building\IPipelineElementsBinder.cs" />
-    <Compile Include="Services\Pipeline\Building\PipelineDesigner.cs" />
-    <Compile Include="Domain\Pipeline\Elements\SignalGeneratorSource.cs" />
-    <Compile Include="Domain\Pipeline\Elements\WindowsOutputSink.cs" />
-    <Compile Include="Domain\Pipeline\Elements\IWindowsOutputSink.cs" />
+    <Compile Include="Domain\Pipeline\AudioPipeline.cs" />
+    <Compile Include="Domain\Pipeline\Elements\Connectors\Input\IStandartInputConnector.cs" />
+    <Compile Include="Domain\Pipeline\Elements\Connectors\Output\IStandartOutputConnector.cs" />
+    <Compile Include="Domain\Pipeline\Elements\Connectors\Input\StandartInputConnector.cs" />
+    <Compile Include="Domain\Pipeline\Elements\Connectors\Output\StandartOutputConnector.cs" />
+    <Compile Include="Domain\Pipeline\Elements\Units\Sources\SignalGeneratorSource.cs" />
+    <Compile Include="Domain\Pipeline\Elements\Units\Sinks\WindowsOutputSink.cs" />
+    <Compile Include="Domain\Pipeline\Elements\Units\Sinks\IWindowsOutputSink.cs" />
     <Compile Include="Domain\Pipeline\IPipeline.cs" />
+    <Compile Include="Domain\Pipeline\IPipelineConnectable.cs" />
+    <Compile Include="Domain\Pipeline\IPipelineConnectableFrom.cs" />
+    <Compile Include="Domain\Pipeline\IPipelineConnectableTo.cs" />
     <Compile Include="Domain\Pipeline\IPipelineConnector.cs" />
     <Compile Include="Domain\Pipeline\IPipelineElement.cs" />
     <Compile Include="Domain\Pipeline\IPipelineInputConnector.cs" />
@@ -58,12 +59,14 @@
     <Compile Include="Domain\Pipeline\IPipelineOutputConnector.cs" />
     <Compile Include="Domain\Pipeline\IPipelineSink.cs" />
     <Compile Include="Domain\Pipeline\IPipelineSource.cs" />
-    <Compile Include="Domain\Pipeline\Elements\ISignalGeneratorSource.cs" />
+    <Compile Include="Domain\Pipeline\Elements\Units\Sources\ISignalGeneratorSource.cs" />
+    <Compile Include="Domain\Pipeline\IPipelineUnit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Engines\IAudioEngine.cs" />
+    <Compile Include="Services\Pipeline\Building\Exceptions\InvalidPipelineConnectableElementStateException.cs" />
     <Compile Include="Services\Pipeline\Building\IPipelineBuilder.cs" />
-    <Compile Include="Services\Pipeline\Building\IPipelineElementsDelinker.cs" />
-    <Compile Include="Services\Pipeline\Building\IPipelineElementsLinker.cs" />
+    <Compile Include="Services\Pipeline\Building\IPipelineUnitsLinker.cs" />
+    <Compile Include="Services\Pipeline\Building\PipelineUnitsLinker.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Starry.Audio.Core\Starry.Audio.Core.csproj">
@@ -81,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\Engines\" />
+    <Folder Include="Domain\Pipeline\Elements\Units\Intermediate\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
