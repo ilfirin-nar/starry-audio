@@ -1,13 +1,14 @@
 ﻿using System;
 using NAudio.Wave;
+using Starry.External.Interfaces.Audio.WaveGenerators;
 
-namespace Starry.Audio.Core.Services.NaudioSpecific.WaveProviders
+namespace Starry.External.Windows.Audio.Naudio.WaveProviders
 {
-    public class SineWaveProvider32 : WaveProvider32
+    public class SineSinWave32Generator32 : WaveProvider32, ISinWave32Generator
     {
         int sample;
 
-        public SineWaveProvider32()
+        public SineSinWave32Generator32()
         {
             Frequency = 1000;
             Amplitude = 0.25f;

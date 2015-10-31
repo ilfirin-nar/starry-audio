@@ -1,21 +1,20 @@
-using NAudio.Wave;
 using Starry.Audio.Core.Domain.Signals.SignalTypes;
-using Starry.Audio.Core.Services.NaudioSpecific.WaveProviders;
+using Starry.External.Interfaces.Audio.WaveGenerators;
 
 namespace Starry.Audio.Core.Services.SignalGenerators.Strategies
 {
     internal class SinGenerationStrategy : ISignalGenerationStrategy<SinSignalType>
     {
-        private readonly IWaveProvider waveProvider;
+        private readonly ISinWave32Generator waveGenerator;
 
-        public SinGenerationStrategy()
+        public SinGenerationStrategy(ISinWave32Generator waveGenerator)
         {
-            waveProvider = new SineWaveProvider32();
+            this.waveGenerator = waveGenerator;
         }
 
         public int FillBuffer(byte[] buffer, int offset, int sampleCount)
         {
-            return waveProvider.Read(buffer, offset, )
+            return waveGenerator.Read(buffer, offset, sampleCount);
         }
     }
 }
