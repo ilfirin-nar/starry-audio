@@ -4,8 +4,6 @@ namespace Starry.Audio.Engine.Domain.Pipeline
 {
     public interface IPipeline
     {
-        ISet<IPipelineSource> SourceElements { get; }
-
-        ISet<IPipelineSink> SinksElements { get; }
+        ISet<IPipelineUnit> Units { get; }
     }
 }
