@@ -27,6 +27,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Daw.Engine.Tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Engine", "Starry.Audio.Engine\Starry.Audio.Engine.csproj", "{E73E7D58-5741-41EF-84A7-48D937BD2F0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.External.Windows", "Starry.External.Windows\Starry.External.Windows.csproj", "{0B685F9A-A943-4CDB-905B-7CE5FAC68E25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.External.Interfaces", "Starry.External.Interfaces\Starry.External.Interfaces.csproj", "{EAC778B1-1221-4A69-B690-3B339A133F36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Graphics.Core", "Starry.Graphics.Core\Starry.Graphics.Core.csproj", "{1ED86E1D-0228-404C-930F-061E93E8F241}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Graphics.Gui", "Starry.Graphics.Gui\Starry.Graphics.Gui.csproj", "{69DCBF86-555E-427D-8BA0-129F247B975E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Daw.Gui", "Starry.Daw.Gui\Starry.Daw.Gui.csproj", "{985F18F0-9DCA-4F54-95BE-9728D650D103}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +91,26 @@ Global
 		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E73E7D58-5741-41EF-84A7-48D937BD2F0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B685F9A-A943-4CDB-905B-7CE5FAC68E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B685F9A-A943-4CDB-905B-7CE5FAC68E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B685F9A-A943-4CDB-905B-7CE5FAC68E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B685F9A-A943-4CDB-905B-7CE5FAC68E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC778B1-1221-4A69-B690-3B339A133F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC778B1-1221-4A69-B690-3B339A133F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC778B1-1221-4A69-B690-3B339A133F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC778B1-1221-4A69-B690-3B339A133F36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED86E1D-0228-404C-930F-061E93E8F241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED86E1D-0228-404C-930F-061E93E8F241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED86E1D-0228-404C-930F-061E93E8F241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED86E1D-0228-404C-930F-061E93E8F241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69DCBF86-555E-427D-8BA0-129F247B975E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69DCBF86-555E-427D-8BA0-129F247B975E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69DCBF86-555E-427D-8BA0-129F247B975E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69DCBF86-555E-427D-8BA0-129F247B975E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{985F18F0-9DCA-4F54-95BE-9728D650D103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{985F18F0-9DCA-4F54-95BE-9728D650D103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{985F18F0-9DCA-4F54-95BE-9728D650D103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{985F18F0-9DCA-4F54-95BE-9728D650D103}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

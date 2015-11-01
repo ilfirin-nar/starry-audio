@@ -10,7 +10,7 @@ namespace Starry.Common.Extensions
             return GetAttributeOf<DescriptionAttribute>(value)?.Description;
         }
 
-        public static T GetAttributeOf<T>(this Enum value) where T : Attribute
+        private static T GetAttributeOf<T>(this Enum value) where T : Attribute
         {
             var type = value.GetType();
             var memInfo = type.GetMember(value.ToString());

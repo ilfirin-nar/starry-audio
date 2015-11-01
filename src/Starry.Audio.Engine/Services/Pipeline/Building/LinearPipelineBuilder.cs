@@ -12,13 +12,18 @@ namespace Starry.Audio.Engine.Services.Pipeline.Building
             this.linker = linker;
         }
 
-        public ILinearPipeline Build(IPipelineSource soruceUnits, IList<IPipelineIntermediate> intermediatesUnits, IPipelineSink sinkUnits)
+        public ILinearPipeline Build(IPipelineSource soruceUnit, IList<IPipelineIntermediate> intermediatesUnit, IPipelineSink sinkUnit)
         {
-            var result = new LinearPipeline();
-            foreach (var unit in intermediatesUnits)
-            {
-                linker.Link(unit, unit[]);
-            }
+            var unitsList = GetNewLinearPipeline(soruceUnit, intermediatesUnit, sinkUnit);
+            linker.Link(unitsList);
+            return new LinearPipeline(unitsList);
+        }
+
+        private static IList<IPipelineUnit> GetNewLinearPipeline(IPipelineUnit soruceUnit, IEnumerable<IPipelineIntermediate> intermediatesUnit, IPipelineUnit sinkUnit)
+        {
+            var result = new List<IPipelineUnit> { soruceUnit };
+            result.AddRange(intermediatesUnit);
+            result.Add(sinkUnit);
             return result;
         }
     }

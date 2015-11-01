@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,7 +61,6 @@
     <Compile Include="Services\Configuration\IAudioConfigurationChecker.cs" />
     <Compile Include="Services\Configuration\IAudioConfigurator.cs" />
     <Compile Include="Services\Configuration\Exceptions\InvalidAudioConfigurationException.cs" />
-    <Compile Include="Services\NaudioSpecific\WaveProviders\SineWaveProvider32.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SignalGenerators\ISignalGenerator.cs" />
     <Compile Include="Services\SignalGenerators\SignalGenerationStrategiesProviders\ISignalGenerationStrategyProvider.cs" />
@@ -80,12 +75,13 @@
     <Compile Include="Services\SignalGenerators\SignalGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Starry.Common\Starry.Common.csproj">
       <Project>{6f6d537e-9841-492e-a0f0-8649196b3a20}</Project>
       <Name>Starry.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Starry.External.Interfaces\Starry.External.Interfaces.csproj">
+      <Project>{EAC778B1-1221-4A69-B690-3B339A133F36}</Project>
+      <Name>Starry.External.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Starry.Infrastructure\Starry.Infrastructure.csproj">
       <Project>{4171B074-ED5E-4F15-B1A6-2A004C71F303}</Project>

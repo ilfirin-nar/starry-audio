@@ -6,6 +6,6 @@ namespace Starry.Audio.Engine.Services.Pipeline.Building
 {
     public interface ILinearPipelineBuilder : IService
     {
-        ILinearPipeline Build(IPipelineSource soruceUnits, IList<IPipelineIntermediate> intermediatesUnits, IPipelineSink sinkUnits);
+        ILinearPipeline Build(IPipelineSource soruceUnit, IList<IPipelineIntermediate> intermediatesUnit, IPipelineSink sinkUnit);
     }
 }

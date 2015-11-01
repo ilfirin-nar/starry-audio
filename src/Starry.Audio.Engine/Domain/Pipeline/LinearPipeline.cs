@@ -4,9 +4,9 @@ namespace Starry.Audio.Engine.Domain.Pipeline
 {
     internal class LinearPipeline : ILinearPipeline
     {
-        public LinearPipeline()
+        public LinearPipeline(IEnumerable<IPipelineUnit> units)
         {
-            Units = new HashSet<IPipelineUnit>();
+            Units = new HashSet<IPipelineUnit>(units);
         }
 
         public ISet<IPipelineUnit> Units { get; }
