@@ -16,5 +16,7 @@ namespace Starry.Audio.Engine.Domain.Pipeline.Elements.Units.Sources
         }
 
         public IStandartOutputConnector OutputConnector { get; }
+
+        public IPipelineUnitState State { get; }
     }
 }

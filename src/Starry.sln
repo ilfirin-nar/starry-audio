@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Io", "Starry.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Infrastructure", "Starry.Infrastructure\Starry.Infrastructure.csproj", "{4171B074-ED5E-4F15-B1A6-2A004C71F303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Math", "Starry.Math\Starry.Math.csproj", "{FD6194C1-0230-459C-A50D-27CADC072875}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Audio.Core", "Starry.Audio.Core\Starry.Audio.Core.csproj", "{A70B1ABB-A5D1-4F0B-9D99-9E3060071230}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Common", "Starry.Common\Starry.Common.csproj", "{6F6D537E-9841-492E-A0F0-8649196B3A20}"
@@ -37,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Graphics.Gui", "Star
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Daw.Gui", "Starry.Daw.Gui\Starry.Daw.Gui.csproj", "{985F18F0-9DCA-4F54-95BE-9728D650D103}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Common.Tests", "Starry.Common.Tests\Starry.Common.Tests.csproj", "{A43EB6B2-FCFE-4068-944B-8B115B602540}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,10 +59,6 @@ Global
 		{4171B074-ED5E-4F15-B1A6-2A004C71F303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4171B074-ED5E-4F15-B1A6-2A004C71F303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4171B074-ED5E-4F15-B1A6-2A004C71F303}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD6194C1-0230-459C-A50D-27CADC072875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD6194C1-0230-459C-A50D-27CADC072875}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD6194C1-0230-459C-A50D-27CADC072875}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD6194C1-0230-459C-A50D-27CADC072875}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A70B1ABB-A5D1-4F0B-9D99-9E3060071230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A70B1ABB-A5D1-4F0B-9D99-9E3060071230}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A70B1ABB-A5D1-4F0B-9D99-9E3060071230}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -111,6 +107,10 @@ Global
 		{985F18F0-9DCA-4F54-95BE-9728D650D103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{985F18F0-9DCA-4F54-95BE-9728D650D103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{985F18F0-9DCA-4F54-95BE-9728D650D103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EB6B2-FCFE-4068-944B-8B115B602540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EB6B2-FCFE-4068-944B-8B115B602540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EB6B2-FCFE-4068-944B-8B115B602540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EB6B2-FCFE-4068-944B-8B115B602540}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

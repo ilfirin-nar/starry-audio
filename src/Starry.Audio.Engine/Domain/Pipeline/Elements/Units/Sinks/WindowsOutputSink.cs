@@ -16,5 +16,7 @@ namespace Starry.Audio.Engine.Domain.Pipeline.Elements.Units.Sinks
         }
 
         public IStandartInputConnector InputConnector { get; }
+
+        public IPipelineUnitState State { get; }
     }
 }

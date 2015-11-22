@@ -16,7 +16,8 @@ namespace Starry.Audio.Core.Services.SignalGenerators
         public ISignal Generate(ISignalType signalType)
         {
             var strategy = strategyProvider.Provide(signalType);
-            return new Signal((buffer, offset, sampleCount) => strategy.FillBuffer(buffer, offset, sampleCount), signalType);
+            //return new Signal((buffer, offset, sampleCount) => strategy.FillBuffer(buffer, offset, sampleCount), signalType);
+            return null;
         }
     }
 }

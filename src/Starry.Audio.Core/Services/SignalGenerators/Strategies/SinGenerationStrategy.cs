@@ -14,7 +14,8 @@ namespace Starry.Audio.Core.Services.SignalGenerators.Strategies
 
         public int FillBuffer(byte[] buffer, int offset, int sampleCount)
         {
-            return waveGenerator.Read(buffer, offset, sampleCount);
+            //return waveGenerator.Read(buffer, offset, sampleCount);
+            return 0;
         }
     }
 }
