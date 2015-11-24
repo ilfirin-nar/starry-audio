@@ -35,7 +35,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Graphics.Gui", "Star
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Daw.Gui", "Starry.Daw.Gui\Starry.Daw.Gui.csproj", "{985F18F0-9DCA-4F54-95BE-9728D650D103}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Common.Tests", "Starry.Common.Tests\Starry.Common.Tests.csproj", "{A43EB6B2-FCFE-4068-944B-8B115B602540}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Common.Algorithms", "Starry.Common.Algorithms\Starry.Common.Algorithms.csproj", "{B0525A15-B2C8-4927-BC1E-59622ED31BBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starry.Common.Algorithms.Tests", "Starry.Common.Algorithms.Tests\Starry.Common.Algorithms.Tests.csproj", "{A43EB6B2-FCFE-4068-944B-8B115B602540}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +109,10 @@ Global
 		{985F18F0-9DCA-4F54-95BE-9728D650D103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{985F18F0-9DCA-4F54-95BE-9728D650D103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{985F18F0-9DCA-4F54-95BE-9728D650D103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0525A15-B2C8-4927-BC1E-59622ED31BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0525A15-B2C8-4927-BC1E-59622ED31BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0525A15-B2C8-4927-BC1E-59622ED31BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0525A15-B2C8-4927-BC1E-59622ED31BBC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A43EB6B2-FCFE-4068-944B-8B115B602540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A43EB6B2-FCFE-4068-944B-8B115B602540}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A43EB6B2-FCFE-4068-944B-8B115B602540}.Release|Any CPU.ActiveCfg = Release|Any CPU
