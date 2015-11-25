@@ -64,9 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sorting\BubbleSortTests.cs" />
+    <Compile Include="Sorting\InsertionSorterTests.cs" />
+    <Compile Include="Sorting\BubbleSorterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sorting\SorterTestMethods.cs" />
+    <Compile Include="Sorting\SorterCommonTestMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -3,7 +3,7 @@ using Starry.Common.Utils;
 
 namespace Starry.Common.Algorithms.Sorting
 {
-    public class BubbleSorter<T> : IBubbleSorter<T>
+    internal class BubbleSorter<T> : IBubbleSorter<T>
         where T : IComparable, IComparable<T>, IEquatable<T>
     {
         public void AscendingSort(T[] array)

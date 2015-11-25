@@ -5,30 +5,30 @@ using Xunit;
 
 namespace Starry.Common.Algorithms.Tests.Sorting
 {
-    public static class SorterTestMethods
+    public static class SorterCommonTestMethods
     {
-        public static void Sort_SimpleValidArrayAscendingSort_IsNotEmpty(ISorter<int> sorter)
+        public static void AscendingSort_SimpleValidArray_IsNotEmpty(ISorter<int> sorter)
         {
             var array = GetRandomIntegerArray();
             sorter.AscendingSort(array);
             Assert.NotEmpty(array);
         }
 
-        public static void Sort_SimpleValidArrayDescendingSort_IsNotEmpty(ISorter<int> sorter)
+        public static void DescendingSort_SimpleValidArray_IsNotEmpty(ISorter<int> sorter)
         {
             var array = GetRandomIntegerArray();
-            sorter.AscendingSort(array);
+            sorter.DescendingSort(array);
             Assert.NotEmpty(array);
         }
 
-        public static void Sort_SimpleValidArrayAscendingSort_ValidResult(ISorter<int> sorter)
+        public static void AscendingSort_SimpleValidArray_ValidResult(ISorter<int> sorter)
         {
             var array = GetRandomIntegerArray();
             sorter.AscendingSort(array);
             (array.Length - 1).Times(index => Assert.True(array[index] <= array[index + 1]));
         }
 
-        public static void Sort_SimpleValidArrayDescendingSort_ValidResult(ISorter<int> sorter)
+        public static void DescendingSort_SimpleValidArray_ValidResult(ISorter<int> sorter)
         {
             var array = GetRandomIntegerArray();
             sorter.DescendingSort(array);
