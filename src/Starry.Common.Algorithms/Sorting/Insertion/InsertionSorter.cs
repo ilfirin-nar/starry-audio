@@ -1,22 +1,22 @@
 using System;
 using System.Collections.Generic;
 
-namespace Starry.Common.Algorithms.Sorting
+namespace Starry.Common.Algorithms.Sorting.Insertion
 {
     internal class InsertionSorter<T> : IInsertionSorter<T>
         where T : IComparable, IComparable<T>, IEquatable<T>
     {
         public void AscendingSort(T[] array)
         {
-            SortByInserts(array, (element, key) => element.CompareTo(key) > 0);
+            Sort(array, (element, selectedElement) => element.CompareTo(selectedElement) > 0);
         }
 
         public void DescendingSort(T[] array)
         {
-            SortByInserts(array, (element, key) => element.CompareTo(key) < 0);
+            Sort(array, (element, selectedElement) => element.CompareTo(selectedElement) < 0);
         }
 
-        private static void SortByInserts(IList<T> array, Func<T, T, bool> compareMethod)
+        private static void Sort(IList<T> array, Func<T, T, bool> compareMethod)
         {
             for (var index = 1; index < array.Count; index++)
             {

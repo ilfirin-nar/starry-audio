@@ -1,22 +1,22 @@
 ﻿using System;
 using Starry.Common.Utils;
 
-namespace Starry.Common.Algorithms.Sorting
+namespace Starry.Common.Algorithms.Sorting.Bubble
 {
     internal class BubbleSorter<T> : IBubbleSorter<T>
         where T : IComparable, IComparable<T>, IEquatable<T>
     {
         public void AscendingSort(T[] array)
         {
-            BubbleSort(array, index => array[index].CompareTo(array[index + 1]) > 0);
+            Bubble(array, index => array[index].CompareTo(array[index + 1]) > 0);
         }
 
         public void DescendingSort(T[] array)
         {
-            BubbleSort(array, index => array[index].CompareTo(array[index + 1]) < 0);
+            Bubble(array, index => array[index].CompareTo(array[index + 1]) < 0);
         }
 
-        private static void BubbleSort(T[] array, Func<int, bool> compareMethod)
+        private static void Bubble(T[] array, Func<int, bool> compareMethod)
         {
             for (var index1 = 0; index1 < array.Length; index1++)
             {

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using LightInject;
-using Starry.Common.Algorithms.Sorting;
 using Starry.Infrastructure.DependencyInjection;
+using Starry.Infrastructure.Interfaces;
 
 namespace Starry.Common.Algorithms
 {
@@ -9,7 +9,7 @@ namespace Starry.Common.Algorithms
     {
         public void Compose(IServiceRegistry serviceRegistry)
         {
-            serviceRegistry.Register<ISorter>(Assemblies.This);
+            serviceRegistry.Register<IService>(Assemblies.This);
         }
 
         private static class Assemblies
