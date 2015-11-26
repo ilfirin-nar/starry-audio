@@ -17,45 +17,60 @@ namespace Starry.Common.Algorithms.Tests.Sorting
         public static void Configure(IServiceContainer container)
         {
             Container = container;
-            container.Register<ISorter>(typeof(ISorter).Assembly, LifeTimeFactory.PerRequest);
+            container.Register<ISorter>();
         }
 
         [Theory, Scoped, InjectData]
         public void AscendingSort_SimpleValidArray_IsNotEmpty()
         {
-            foreach (var sorter in Container.GetAllInstances<ISorter<int>>())
+            ForEachInstanceOf<ISorter<int>>(sorter =>
             {
                 var array = GetRandomIntegerArray();
                 sorter.AscendingSort(array);
                 Assert.NotEmpty(array);
-            }
+            });
         }
 
         [Theory, Scoped, InjectData]
         public void DescendingSort_SimpleValidArray_IsNotEmpty()
         {
-            var array = GetRandomIntegerArray();
-            sorter.DescendingSort(array);
-            Assert.NotEmpty(array);
+            ForEachInstanceOf<ISorter<int>>(sorter =>
+            {
+                var array = GetRandomIntegerArray();
+                sorter.DescendingSort(array);
+                Assert.NotEmpty(array);
+            });
         }
 
         [Theory, Scoped, InjectData]
-        public void AscendingSort_SimpleValidArray_ValidResult(IBubbleSorter<int> sorter)
+        public void AscendingSort_SimpleValidArray_ValidResult()
         {
-            var array = GetRandomIntegerArray();
-            sorter.AscendingSort(array);
-            (array.Length - 1).Times(index => Assert.True(array[index] <= array[index + 1]));
+            ForEachInstanceOf<ISorter<int>>(sorter =>
+            {
+                var array = GetRandomIntegerArray();
+                sorter.AscendingSort(array);
+                (array.Length - 1).Times(index => Assert.True(array[index] <= array[index + 1]));
+            });
         }
 
         [Theory, Scoped, InjectData]
-        public void DescendingSort_SimpleValidArray_ValidResult(IBubbleSorter<int> sorter)
+        public void DescendingSort_SimpleValidArray_ValidResult()
         {
-            var array = GetRandomIntegerArray();
-            sorter.DescendingSort(array);
-            (array.Length - 1).Times(index => Assert.True(array[index] >= array[index + 1]));
+            ForEachInstanceOf<ISorter<int>>(sorter =>
+            {
+                var array = GetRandomIntegerArray();
+                sorter.DescendingSort(array);
+                (array.Length - 1).Times(index => Assert.True(array[index] >= array[index + 1]));
+            });
         }
 
-        private static 
+        private static void ForEachInstanceOf<TService>(Action<TService> action)
+        {
+            foreach (var service in Container.GetAllInstances<TService>())
+            {
+                action(service);
+            }
+        }
 
         private static int[] GetRandomIntegerArray()
         {
