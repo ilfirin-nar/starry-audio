@@ -1,3 +1,3 @@
 # Starry Audio
 
-Simple audio framework
+Simple audio framework.
