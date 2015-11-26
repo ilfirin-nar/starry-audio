@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using LightInject;
+﻿using LightInject;
 using LightInject.xUnit2;
 using Starry.Common.Algorithms.Sorting;
-using Starry.Common.Algorithms.Sorting.Bubble;
 using Starry.Common.Extensions;
-using Starry.Infrastructure.DependencyInjection;
 using Xunit;
+using static Starry.Common.Utils.RandomArrayProvider;
+using static Starry.Infrastructure.DependencyInjection.Utils.InstanceExtracter;
 
 namespace Starry.Common.Algorithms.Tests.Sorting
 {
@@ -28,7 +26,7 @@ namespace Starry.Common.Algorithms.Tests.Sorting
                 var array = GetRandomIntegerArray();
                 sorter.AscendingSort(array);
                 Assert.NotEmpty(array);
-            });
+            }, Container);
         }
 
         [Theory, Scoped, InjectData]
@@ -39,7 +37,7 @@ namespace Starry.Common.Algorithms.Tests.Sorting
                 var array = GetRandomIntegerArray();
                 sorter.DescendingSort(array);
                 Assert.NotEmpty(array);
-            });
+            }, Container);
         }
 
         [Theory, Scoped, InjectData]
@@ -50,7 +48,7 @@ namespace Starry.Common.Algorithms.Tests.Sorting
                 var array = GetRandomIntegerArray();
                 sorter.AscendingSort(array);
                 (array.Length - 1).Times(index => Assert.True(array[index] <= array[index + 1]));
-            });
+            }, Container);
         }
 
         [Theory, Scoped, InjectData]
@@ -61,26 +59,7 @@ namespace Starry.Common.Algorithms.Tests.Sorting
                 var array = GetRandomIntegerArray();
                 sorter.DescendingSort(array);
                 (array.Length - 1).Times(index => Assert.True(array[index] >= array[index + 1]));
-            });
-        }
-
-        private static void ForEachInstanceOf<TService>(Action<TService> action)
-        {
-            foreach (var service in Container.GetAllInstances<TService>())
-            {
-                action(service);
-            }
-        }
-
-        private static int[] GetRandomIntegerArray()
-        {
-            var array = new int[100];
-            var random = new Random();
-            for (var index = 0; index < array.Length; index++)
-            {
-                array[index] = random.Next(-100, 100);
-            }
-            return array;
+            }, Container);
         }
     }
 }

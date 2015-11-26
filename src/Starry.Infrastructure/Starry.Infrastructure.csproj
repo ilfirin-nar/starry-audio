@@ -47,6 +47,7 @@
     <Compile Include="DependencyInjection\LifettimeFactory.cs" />
     <Compile Include="DependencyInjection\ServiceRegistrationFilter.cs" />
     <Compile Include="DependencyInjection\ServiceRegistryExtensions.cs" />
+    <Compile Include="DependencyInjection\Utils\InstanceExtracter.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Interfaces\IStrategy.cs" />
     <Compile Include="ServiceProviders\IStrategyProvider.cs" />
