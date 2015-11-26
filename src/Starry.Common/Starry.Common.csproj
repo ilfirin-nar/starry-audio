@@ -43,6 +43,7 @@
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Utils\RandomArrayProvider.cs" />
+    <Compile Include="Utils\RandomStringGenerator.cs" />
     <Compile Include="Utils\ValuesSwapper.cs" />
     <Compile Include="Extensions\IntExtensions.cs" />
     <Compile Include="Extensions\SetExtensions.cs" />
