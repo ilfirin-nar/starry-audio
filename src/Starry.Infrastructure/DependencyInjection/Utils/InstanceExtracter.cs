@@ -7,9 +7,9 @@ namespace Starry.Infrastructure.DependencyInjection.Utils
     {
         public static void ForEachInstanceOf<TService>(Action<TService> action, IServiceContainer container)
         {
-            foreach (var service in container.GetAllInstances<TService>())
+            foreach (var serviceInstance in container.GetAllInstances<TService>())
             {
-                action(service);
+                action(serviceInstance);
             }
         }
     }

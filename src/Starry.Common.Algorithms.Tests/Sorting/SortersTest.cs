@@ -21,10 +21,10 @@ namespace Starry.Common.Algorithms.Tests.Sorting
         [Theory, Scoped, InjectData]
         public void AscendingSort_SimpleValidArray_IsNotEmpty()
         {
-            ForEachInstanceOf<ISorter<int>>(sorter =>
+            ForEachInstanceOf<ISorter<int>>(instance =>
             {
                 var array = GetRandomIntegerArray();
-                sorter.AscendingSort(array);
+                instance.AscendingSort(array);
                 Assert.NotEmpty(array);
             }, Container);
         }
@@ -32,10 +32,10 @@ namespace Starry.Common.Algorithms.Tests.Sorting
         [Theory, Scoped, InjectData]
         public void DescendingSort_SimpleValidArray_IsNotEmpty()
         {
-            ForEachInstanceOf<ISorter<int>>(sorter =>
+            ForEachInstanceOf<ISorter<int>>(instance =>
             {
                 var array = GetRandomIntegerArray();
-                sorter.DescendingSort(array);
+                instance.DescendingSort(array);
                 Assert.NotEmpty(array);
             }, Container);
         }
@@ -43,10 +43,10 @@ namespace Starry.Common.Algorithms.Tests.Sorting
         [Theory, Scoped, InjectData]
         public void AscendingSort_SimpleValidArray_ValidResult()
         {
-            ForEachInstanceOf<ISorter<int>>(sorter =>
+            ForEachInstanceOf<ISorter<int>>(instance =>
             {
                 var array = GetRandomIntegerArray();
-                sorter.AscendingSort(array);
+                instance.AscendingSort(array);
                 (array.Length - 1).Times(index => Assert.True(array[index] <= array[index + 1]));
             }, Container);
         }
@@ -54,10 +54,10 @@ namespace Starry.Common.Algorithms.Tests.Sorting
         [Theory, Scoped, InjectData]
         public void DescendingSort_SimpleValidArray_ValidResult()
         {
-            ForEachInstanceOf<ISorter<int>>(sorter =>
+            ForEachInstanceOf<ISorter<int>>(instance =>
             {
                 var array = GetRandomIntegerArray();
-                sorter.DescendingSort(array);
+                instance.DescendingSort(array);
                 (array.Length - 1).Times(index => Assert.True(array[index] >= array[index + 1]));
             }, Container);
         }
