@@ -8,7 +8,8 @@ namespace StarryAudio.Loopback.DemoApp
         public static void Main(string[] args)
         {
             var loopback = new Loopback();
-            loopback.Start();
+            var delay = new EffectSampleProvider(loopback.SampleProvider);
+            loopback.StartWith(delay);
 
             while (true)
             {

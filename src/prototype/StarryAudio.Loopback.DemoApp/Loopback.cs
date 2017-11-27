@@ -8,6 +8,7 @@ namespace StarryAudio.Loopback.DemoApp
         private const int WeveOutLatency = 50;
         private readonly WaveInEvent _sourceStream;
         private readonly DirectSoundOut _waveOut;
+        private readonly WaveInProvider _waveInProvider;
 
         public Loopback()
         {
@@ -18,13 +19,22 @@ namespace StarryAudio.Loopback.DemoApp
                 WaveFormat = new WaveFormat(44100, waveInDeviceCapabilities.Channels)
             };
 
-            var waveIn = new WaveInProvider(_sourceStream);
+            _waveInProvider = new WaveInProvider(_sourceStream);
             _waveOut = new DirectSoundOut(WeveOutLatency);
-            _waveOut.Init(waveIn);
         }
+
+        public ISampleProvider SampleProvider => _waveInProvider.ToSampleProvider();
 
         public void Start()
         {
+            _waveOut.Init(_waveInProvider);
+            _sourceStream.StartRecording();
+            _waveOut.Play();
+        }
+
+        public void StartWith(ISampleProvider sampleProvider)
+        {
+            _waveOut.Init(sampleProvider);
             _sourceStream.StartRecording();
             _waveOut.Play();
         }
