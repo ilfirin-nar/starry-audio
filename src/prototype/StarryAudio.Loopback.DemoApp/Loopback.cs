@@ -5,6 +5,7 @@ namespace StarryAudio.Loopback.DemoApp
     internal class Loopback
     {
         private const int DeviceNumber = 1;
+        private const int WeveOutLatency = 50;
         private readonly WaveInEvent _sourceStream;
         private readonly DirectSoundOut _waveOut;
 
@@ -18,7 +19,7 @@ namespace StarryAudio.Loopback.DemoApp
             };
 
             var waveIn = new WaveInProvider(_sourceStream);
-            _waveOut = new DirectSoundOut();
+            _waveOut = new DirectSoundOut(WeveOutLatency);
             _waveOut.Init(waveIn);
         }
 
