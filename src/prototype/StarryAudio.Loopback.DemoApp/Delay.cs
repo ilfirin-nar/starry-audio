@@ -4,37 +4,72 @@ namespace StarryAudio.Loopback.DemoApp
 {
     public class Delay : IEffect
     {
-        private readonly IList<Queue<float>> _samplesQueues;
+        private readonly Queue<float> _samplesQueue;
+        private int _echoLength;
+        private float _echoFactor;
 
-        public Delay(int echoLength = 200000, float echoFactor = 0.5f, int count = 2)
+        public Delay(int echoLength = DefaultEchoLength, float echoFactor = DefatultEchoFactor)
         {
             EchoLength = echoLength;
             EchoFactor = echoFactor;
 
-            _samplesQueues = new List<Queue<float>>();
-            for (var i = 0; i < count; i++)
+            _samplesQueue = new Queue<float>();
+            for (var j = 0; j < echoLength; j++)
             {
-                var queue = new Queue<float>();
-                for (var j = 0; j < echoLength; j++)
-                {
-                    queue.Enqueue(0f);
-                }
-                _samplesQueues.Add(queue);
+                _samplesQueue.Enqueue(0f);
             }
         }
 
-        public int EchoLength { get; }
+        public const int MinEchoLength = 5000;
+        public const int MaxEchoLength = 100_000;
+        public const int DefaultEchoLength = 10_000;
+        public const float MinEchoFactor = 0.3f;
+        public const float MaxEchoFactor = 1.0f;
+        public const float DefatultEchoFactor = 0.75f;
 
-        public float EchoFactor { get; }
+        public int EchoLength
+        {
+            get => _echoLength;
+            private set
+            {
+                if (value < MinEchoLength)
+                {
+                    _echoLength = MinEchoLength;
+                } else if (value > MaxEchoLength)
+                {
+                    _echoLength = MaxEchoLength;
+                }
+                else
+                {
+                    _echoLength = value;
+                }
+            }
+        }
+
+        public float EchoFactor
+        {
+            get => _echoFactor;
+            private set
+            {
+                if (value < MinEchoFactor)
+                {
+                    _echoFactor = MinEchoFactor;
+                }
+                else if (value > MaxEchoFactor)
+                {
+                    _echoFactor = MaxEchoFactor;
+                }
+                else
+                {
+                    _echoFactor = value;
+                }
+            }
+        }
 
         public float ApplyEffect(float sample)
         {
-            var result = 0f;
-            foreach (var queue in _samplesQueues)
-            {
-                queue.Enqueue(sample);
-                result += sample + EchoFactor * queue.Dequeue();
-            }
+            var result = sample + EchoFactor * _samplesQueue.Dequeue();
+            _samplesQueue.Enqueue(result);
             return result;
         }
     }

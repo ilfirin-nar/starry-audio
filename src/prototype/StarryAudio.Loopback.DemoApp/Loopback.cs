@@ -4,23 +4,23 @@ namespace StarryAudio.Loopback.DemoApp
 {
     internal class Loopback
     {
-        private const int DeviceNumber = 1;
-        private const int WeveOutLatency = 50;
+        private const int DefaultDeviceNumber = 0;
+        private const int DefaultWeveOutLatency = 50;
         private readonly WaveInEvent _sourceStream;
         private readonly DirectSoundOut _waveOut;
         private readonly WaveInProvider _waveInProvider;
 
-        public Loopback()
+        public Loopback(int deviceNumber = DefaultDeviceNumber)
         {
-            var waveInDeviceCapabilities = WaveIn.GetCapabilities(DeviceNumber);
+            var waveInDeviceCapabilities = WaveIn.GetCapabilities(deviceNumber);
             _sourceStream = new WaveInEvent
             {
-                DeviceNumber = DeviceNumber,
+                DeviceNumber = deviceNumber,
                 WaveFormat = new WaveFormat(44100, waveInDeviceCapabilities.Channels)
             };
 
             _waveInProvider = new WaveInProvider(_sourceStream);
-            _waveOut = new DirectSoundOut(WeveOutLatency);
+            _waveOut = new DirectSoundOut(DefaultWeveOutLatency);
         }
 
         public ISampleProvider SampleProvider => _waveInProvider.ToSampleProvider();

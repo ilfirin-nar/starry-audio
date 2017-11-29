@@ -4,14 +4,14 @@ namespace StarryAudio.Loopback.DemoApp
 {
     public class EffectSampleProvider : ISampleProvider
     {
-        private readonly Delay _effect;
+        private readonly IEffect _effect;
         private readonly ISampleProvider _sourceProvider;
 
-        public EffectSampleProvider(ISampleProvider sourceProvider)
+        public EffectSampleProvider(ISampleProvider sourceProvider, IEffect effect)
         {
             _sourceProvider = sourceProvider;
             WaveFormat = sourceProvider.WaveFormat;
-            _effect = new Delay();
+            _effect = effect;
         }
 
         public int Read(float[] buffer, int offset, int count)
