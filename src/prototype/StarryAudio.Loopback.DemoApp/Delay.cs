@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace StarryAudio.Loopback.DemoApp
 {
@@ -10,17 +11,18 @@ namespace StarryAudio.Loopback.DemoApp
 
         public Delay(int echoLength = DefaultEchoLength, float echoFactor = DefatultEchoFactor)
         {
-            EchoLength = echoLength;
-            EchoFactor = echoFactor;
-
             _samplesQueue = new Queue<float>();
+
             for (var j = 0; j < echoLength; j++)
             {
                 _samplesQueue.Enqueue(0f);
             }
+
+            EchoLength = echoLength;
+            EchoFactor = echoFactor;
         }
 
-        public const int MinEchoLength = 5000;
+        public const int MinEchoLength = 882;
         public const int MaxEchoLength = 100_000;
         public const int DefaultEchoLength = 10_000;
         public const float MinEchoFactor = 0.3f;
@@ -30,8 +32,9 @@ namespace StarryAudio.Loopback.DemoApp
         public int EchoLength
         {
             get => _echoLength;
-            private set
+            set
             {
+                var oldLength = _echoLength;
                 if (value < MinEchoLength)
                 {
                     _echoLength = MinEchoLength;
@@ -43,13 +46,29 @@ namespace StarryAudio.Loopback.DemoApp
                 {
                     _echoLength = value;
                 }
+
+                if (oldLength < _echoLength)
+                {
+                    var arr = _samplesQueue.ToArray();
+                    for (var i = 0; i < _echoLength - oldLength; i++)
+                    {
+                        _samplesQueue.Enqueue(arr[arr.Length - i -1]);
+                    }
+                }
+                else
+                {
+                    for (var i = 0; i < oldLength - _echoLength; i++)
+                    {
+                        _samplesQueue.Dequeue();
+                    }
+                }
             }
         }
 
         public float EchoFactor
         {
             get => _echoFactor;
-            private set
+            set
             {
                 if (value < MinEchoFactor)
                 {
@@ -68,7 +87,7 @@ namespace StarryAudio.Loopback.DemoApp
 
         public float ApplyEffect(float sample)
         {
-            var result = sample + EchoFactor * _samplesQueue.Dequeue();
+            var result = Math.Min(1, Math.Max(-1, sample + EchoFactor * _samplesQueue.Dequeue()));
             _samplesQueue.Enqueue(result);
             return result;
         }

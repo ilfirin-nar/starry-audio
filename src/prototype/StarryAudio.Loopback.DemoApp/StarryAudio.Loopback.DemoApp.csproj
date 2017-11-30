@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chorus.cs" />
     <Compile Include="EffectSampleProvider.cs" />
     <Compile Include="Delay.cs" />
     <Compile Include="IEffect.cs" />
