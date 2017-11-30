@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using StarryAudio.Loopback.DemoApp.Utils;
 
 namespace StarryAudio.Loopback.DemoApp
 {
-    public class Delay : IEffect
+    public class DelayEffect : IEffect
     {
         private readonly Queue<float> _samplesQueue;
         private int _echoLength;
         private float _echoFactor;
 
-        public Delay(int echoLength = DefaultEchoLength, float echoFactor = DefatultEchoFactor)
+        public DelayEffect(int echoLength = DefaultEchoLength, float echoFactor = DefatultEchoFactor)
         {
             _samplesQueue = new Queue<float>();
 
@@ -87,7 +87,7 @@ namespace StarryAudio.Loopback.DemoApp
 
         public float ApplyEffect(float sample)
         {
-            var result = Math.Min(1, Math.Max(-1, sample + EchoFactor * _samplesQueue.Dequeue()));
+            var result = Sample.Normalize(sample + EchoFactor * _samplesQueue.Dequeue());
             _samplesQueue.Enqueue(result);
             return result;
         }

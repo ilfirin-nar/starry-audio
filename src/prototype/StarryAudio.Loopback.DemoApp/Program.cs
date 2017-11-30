@@ -10,13 +10,16 @@ namespace StarryAudio.Loopback.DemoApp
             //loopback.Start();
 
             // chorus
-            var chorusSampleProvider = new EffectSampleProvider(loopback.SampleProvider, new Chorus());
-            loopback.StartWith(chorusSampleProvider);
+            //var chorusSampleProvider = new EffectSampleProvider(loopback.SampleProvider, new ChorusEffect());
+            //loopback.StartWith(chorusSampleProvider);
 
             // double delay
-            //var delay1 = new EffectSampleProvider(loopback.SampleProvider, new Delay(Delay.DefaultEchoLength + 30000));
-            //var delay2 = new EffectSampleProvider(delay1, new Delay());
-            //loopback.StartWith(delay2);
+            //var delaySampleProvider = new EffectSampleProvider(loopback.SampleProvider, new DelayEffect(DelayEffect.DefaultEchoLength + 30000));
+            //var secondDelaySampleProvider = new EffectSampleProvider(delaySampleProvider, new DelayEffect());
+            //loopback.StartWith(secondDelaySampleProvider);
+
+            var sampleProvider = new EffectSampleProvider(loopback.SampleProvider, new ReverbEffect());
+            loopback.StartWith(sampleProvider);
 
             while (true)
             {

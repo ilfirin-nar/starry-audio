@@ -1,31 +1,31 @@
-﻿using System;
+﻿using StarryAudio.Loopback.DemoApp.Utils;
 
 namespace StarryAudio.Loopback.DemoApp
 {
-    public class Chorus : IEffect
+    public class ChorusEffect : IEffect
     {
         // samples = seconds * 44100
         private const int MinDelaySamples = 882; // 0.02
         private const int MaxDelaySamples = 1323; // 0.03
         private const int LfoVelocity = 200;
 
-        private readonly Delay _delay;
+        private readonly DelayEffect _delayEffect;
         private bool _incrementing;
         private int _counter;
 
-        public Chorus()
+        public ChorusEffect()
         {
-            _delay = new Delay(MinDelaySamples);
+            _delayEffect = new DelayEffect(MinDelaySamples);
             _incrementing = true;
     }
 
         public float ApplyEffect(float sample)
         {
-            if (_delay.EchoLength <= MinDelaySamples)
+            if (_delayEffect.EchoLength <= MinDelaySamples)
             {
                 _incrementing = true;
             }
-            if (_delay.EchoLength >= MaxDelaySamples)
+            if (_delayEffect.EchoLength >= MaxDelaySamples)
             {
                 _incrementing = false;
             }
@@ -34,16 +34,16 @@ namespace StarryAudio.Loopback.DemoApp
             {
                 if (_incrementing)
                 {
-                    _delay.EchoLength++;
+                    _delayEffect.EchoLength++;
                 }
                 else
                 {
-                    _delay.EchoLength--;
+                    _delayEffect.EchoLength--;
                 }
                 _counter = 0;
             }
             _counter++;
-            return Math.Min(1, Math.Max(-1, sample + _delay.ApplyEffect(sample)));
+            return Sample.Normalize(sample + _delayEffect.ApplyEffect(sample));
         }
     }
 }
