@@ -1,33 +1,32 @@
 ﻿using System.Collections.Generic;
-using StarryAudio.Loopback.DemoApp.Utils;
+using StarryAudio.Dsp.SampleProcessing.Settings;
+using StarryAudio.Dsp.Utils;
 
-namespace StarryAudio.Loopback.DemoApp
+namespace StarryAudio.Dsp.SampleProcessing.Processors
 {
-    public class DelayEffect : IEffect
+    public class DelaySampleProcessor : ISampleProcessor
     {
         private readonly Queue<float> _samplesQueue;
         private int _echoLength;
         private float _echoFactor;
 
-        public DelayEffect(int echoLength = DefaultEchoLength, float echoFactor = DefatultEchoFactor)
-        {
+        public DelaySampleProcessor(DelayProcessorSettings settings)
+        { 
             _samplesQueue = new Queue<float>();
 
-            for (var j = 0; j < echoLength; j++)
+            for (var j = 0; j < settings.EchoLength; j++)
             {
                 _samplesQueue.Enqueue(0f);
             }
 
-            EchoLength = echoLength;
-            EchoFactor = echoFactor;
+            EchoLength = settings.EchoLength;
+            EchoFactor = settings.EchoFactor;
         }
 
         public const int MinEchoLength = 882;
         public const int MaxEchoLength = 100_000;
-        public const int DefaultEchoLength = 10_000;
         public const float MinEchoFactor = 0.3f;
         public const float MaxEchoFactor = 1.0f;
-        public const float DefatultEchoFactor = 0.75f;
 
         public int EchoLength
         {
@@ -85,7 +84,7 @@ namespace StarryAudio.Loopback.DemoApp
             }
         }
 
-        public float ApplyEffect(float sample)
+        public float ProcessSample(float sample)
         {
             var result = Sample.Normalize(sample + EchoFactor * _samplesQueue.Dequeue());
             _samplesQueue.Enqueue(result);

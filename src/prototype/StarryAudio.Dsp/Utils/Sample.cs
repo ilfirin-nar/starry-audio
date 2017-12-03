@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StarryAudio.Loopback.DemoApp.Utils
+namespace StarryAudio.Dsp.Utils
 {
     internal static class Sample
     {

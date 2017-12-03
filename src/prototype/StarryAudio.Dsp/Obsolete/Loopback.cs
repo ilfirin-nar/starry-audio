@@ -1,14 +1,16 @@
-﻿using NAudio.Wave;
+﻿using System;
+using NAudio.Wave;
 
-namespace StarryAudio.Loopback.DemoApp
+namespace StarryAudio.Dsp.Obsolete
 {
-    internal class Loopback
+    [Obsolete]
+    public class Loopback
     {
         private const int DefaultDeviceNumber = 1;
         private const int DefaultWaveOutLatency = 50;
         private readonly WaveInEvent _sourceStream;
-        private readonly DirectSoundOut _waveOut;
         private readonly WaveInProvider _waveInProvider;
+        private readonly DirectSoundOut _waveOut;
 
         public Loopback(int deviceNumber = DefaultDeviceNumber)
         {
