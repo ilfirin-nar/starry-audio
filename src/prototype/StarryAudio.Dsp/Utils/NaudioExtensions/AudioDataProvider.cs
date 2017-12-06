@@ -4,16 +4,11 @@ namespace StarryAudio.Dsp.Utils.NaudioExtensions
 {
     public class AudioDataProvider
     {
-        public AudioDataProvider(
-            ISampleProvider sampleProvider,
-            IWaveProvider waveProvider = null)
+        public AudioDataProvider(ISampleProvider sampleProvider)
         {
             SampleProvider = sampleProvider;
-            WaveProvider = waveProvider;
         }
 
         public ISampleProvider SampleProvider { get; }
-
-        public IWaveProvider WaveProvider { get; }
     }
 }

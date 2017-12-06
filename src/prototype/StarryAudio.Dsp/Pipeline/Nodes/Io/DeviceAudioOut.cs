@@ -18,7 +18,7 @@ namespace StarryAudio.Dsp.Pipeline.Nodes.Io
 
         public void Activate()
         {
-            _waveOut.Init(_inputNode.AudioDataProvider.WaveProvider);
+            _waveOut.Init(_inputNode.AudioDataProvider.SampleProvider.ToWaveProvider());
             _waveOut.Play();
         }
 

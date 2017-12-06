@@ -11,7 +11,7 @@ namespace StarryAudio.DemoApp
         {
             new AudioPipeline(1, 50)
                 .Processor<DelaySampleProcessor>(new DelayProcessorSettings())
-                //.Processor<ReverbSampleProcessor>(new ReverbProcessorSettings())
+                .Processor<ReverbSampleProcessor>(new ReverbProcessorSettings())
                 .Output()
                 .Activate();
 

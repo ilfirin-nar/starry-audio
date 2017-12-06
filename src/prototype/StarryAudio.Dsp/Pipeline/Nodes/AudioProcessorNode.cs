@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using StarryAudio.Dsp.SampleProcessing;
 using StarryAudio.Dsp.Utils.NaudioExtensions;
 
@@ -11,7 +11,7 @@ namespace StarryAudio.Dsp.Pipeline.Nodes
         {
             var processor = (TSampleProcessor) Activator.CreateInstance(typeof(TSampleProcessor), settings);
             var standartSampleProvider = new StandartSampleProvider(inNode.AudioDataProvider, processor);
-            AudioDataProvider = new AudioDataProvider(standartSampleProvider, inNode.AudioDataProvider.WaveProvider);
+            AudioDataProvider = new AudioDataProvider(standartSampleProvider);
         }
 
         public AudioDataProvider AudioDataProvider { get; }

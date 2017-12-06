@@ -18,7 +18,7 @@ namespace StarryAudio.Dsp.Pipeline.Nodes.Io
             };
 
             var waveInProvider = new WaveInProvider(_sourceStream);
-            AudioDataProvider = new AudioDataProvider(waveInProvider.ToSampleProvider(), waveInProvider);
+            AudioDataProvider = new AudioDataProvider(waveInProvider.ToSampleProvider());
         }
 
         public AudioDataProvider AudioDataProvider { get; }
