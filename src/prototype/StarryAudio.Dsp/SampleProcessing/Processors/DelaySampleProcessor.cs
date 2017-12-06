@@ -7,8 +7,7 @@ namespace StarryAudio.Dsp.SampleProcessing.Processors
     public class DelaySampleProcessor : ISampleProcessor
     {
         private readonly Queue<float> _samplesQueue;
-        private int _echoLength;
-        private float _echoFactor;
+        private readonly DelayProcessorSettings _settings;
 
         public DelaySampleProcessor(DelayProcessorSettings settings)
         { 
@@ -19,76 +18,36 @@ namespace StarryAudio.Dsp.SampleProcessing.Processors
                 _samplesQueue.Enqueue(0f);
             }
 
-            EchoLength = settings.EchoLength;
-            EchoFactor = settings.EchoFactor;
-        }
-
-        public const int MinEchoLength = 882;
-        public const int MaxEchoLength = 100_000;
-        public const float MinEchoFactor = 0.3f;
-        public const float MaxEchoFactor = 1.0f;
-
-        public int EchoLength
-        {
-            get => _echoLength;
-            set
-            {
-                var oldLength = _echoLength;
-                if (value < MinEchoLength)
-                {
-                    _echoLength = MinEchoLength;
-                } else if (value > MaxEchoLength)
-                {
-                    _echoLength = MaxEchoLength;
-                }
-                else
-                {
-                    _echoLength = value;
-                }
-
-                if (oldLength < _echoLength)
-                {
-                    var arr = _samplesQueue.ToArray();
-                    for (var i = 0; i < _echoLength - oldLength; i++)
-                    {
-                        _samplesQueue.Enqueue(arr[arr.Length - i -1]);
-                    }
-                }
-                else
-                {
-                    for (var i = 0; i < oldLength - _echoLength; i++)
-                    {
-                        _samplesQueue.Dequeue();
-                    }
-                }
-            }
-        }
-
-        public float EchoFactor
-        {
-            get => _echoFactor;
-            set
-            {
-                if (value < MinEchoFactor)
-                {
-                    _echoFactor = MinEchoFactor;
-                }
-                else if (value > MaxEchoFactor)
-                {
-                    _echoFactor = MaxEchoFactor;
-                }
-                else
-                {
-                    _echoFactor = value;
-                }
-            }
+            _settings = settings;
         }
 
         public float ProcessSample(float sample)
         {
-            var result = Sample.Normalize(sample + EchoFactor * _samplesQueue.Dequeue());
+            ActualizeQueueSize(_settings.EchoLength);
+
+            var result = Sample.Normalize(sample + _settings.EchoFactor * _samplesQueue.Dequeue());
             _samplesQueue.Enqueue(result);
             return result;
+        }
+
+        private void ActualizeQueueSize(int echoLength)
+        {
+            var oldLength = _samplesQueue.Count;
+            if (oldLength < echoLength)
+            {
+                var arr = _samplesQueue.ToArray();
+                for (var i = 0; i < echoLength - oldLength; i++)
+                {
+                    _samplesQueue.Enqueue(arr[arr.Length - i - 1]);
+                }
+            }
+            else
+            {
+                for (var i = 0; i < oldLength - echoLength; i++)
+                {
+                    _samplesQueue.Dequeue();
+                }
+            }
         }
     }
 }

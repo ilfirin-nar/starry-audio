@@ -9,24 +9,27 @@ namespace StarryAudio.Dsp.SampleProcessing.Processors
         private const int MinDelaySamples = 882; // 0.02
         private const int MaxDelaySamples = 1323; // 0.03
         private const int LfoVelocity = 200;
-
+        private readonly DelayProcessorSettings _innerDelayProcessorSettings;
         private readonly DelaySampleProcessor _delaySampleProcessor;
         private bool _incrementing;
         private int _counter;
 
         public ChorusSampleProcessor()
         {
-            _delaySampleProcessor = new DelaySampleProcessor(new DelayProcessorSettings(MinDelaySamples));
+            _innerDelayProcessorSettings = new DelayProcessorSettings(MinDelaySamples);
+            _delaySampleProcessor = new DelaySampleProcessor(_innerDelayProcessorSettings);
             _incrementing = true;
     }
 
         public float ProcessSample(float sample)
         {
-            if (_delaySampleProcessor.EchoLength <= MinDelaySamples)
+            var echoLength = _innerDelayProcessorSettings.EchoLength;
+
+            if (echoLength <= MinDelaySamples)
             {
                 _incrementing = true;
             }
-            if (_delaySampleProcessor.EchoLength >= MaxDelaySamples)
+            if (echoLength >= MaxDelaySamples)
             {
                 _incrementing = false;
             }
@@ -35,11 +38,11 @@ namespace StarryAudio.Dsp.SampleProcessing.Processors
             {
                 if (_incrementing)
                 {
-                    _delaySampleProcessor.EchoLength++;
+                    _innerDelayProcessorSettings.EchoLength++;
                 }
                 else
                 {
-                    _delaySampleProcessor.EchoLength--;
+                    _innerDelayProcessorSettings.EchoLength--;
                 }
                 _counter = 0;
             }
